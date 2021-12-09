@@ -1,0 +1,43 @@
+.App{
+    color: #fff;
+    background-color: brown;
+    position: relative;
+
+    height: 100vh;
+    &-container{
+        background-color: orange;
+        height: 30vh;
+        width: 100%;
+        div{
+            display: flex;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid blue;
+            justify-content: space-between;
+            align-items: center;
+            background-color: red;
+            width: 50%;    
+            min-width: 30rem;
+            h1{
+                text-transform: uppercase;
+                font-size: 2.5rem;
+            }
+            img{
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+       
+    }
+    footer{
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: yellow;
+        color: #000;
+        text-align: center;
+    }
+}
