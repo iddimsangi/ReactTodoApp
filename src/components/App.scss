@@ -1,43 +1,54 @@
-.App{
-    color: #fff;
-    background-color: brown;
-    position: relative;
+.App {
+  color: #fff;
+  background-color: brown;
+  position: relative;
 
-    height: 100vh;
-    &-container{
-        background-color: orange;
-        height: 30vh;
-        width: 100%;
-        div{
-            display: flex;
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 2px solid blue;
-            justify-content: space-between;
-            align-items: center;
-            background-color: red;
-            width: 50%;    
-            min-width: 30rem;
-            h1{
-                text-transform: uppercase;
-                font-size: 2.5rem;
-            }
-            img{
-                width: 2.5rem;
-                height: 2.5rem;
-            }
+  height: 100vh;
+  &-container {
+    background-color: orange;
+    height: 30vh;
+    width: 100%;
+    &--main {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 2px solid blue;
+      background-color: yellow;
+      min-height: 50vh;
+      width: 50%;
+      min-width: 25rem;
+
+      &-head {
+        background-color: red;
+        display: flex;
+        justify-content: space-between;
+        h1 {
+          text-transform: uppercase;
+          font-size: 2.5rem;
         }
-       
+        img {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+      &-body {
+        // margin-top: 2rem;
+        // width: 90%;
+        // margin: 0 auto;
+        background-color: seagreen;
+      }
     }
-    footer{
-        position: absolute;
-        top: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: yellow;
-        color: #000;
-        text-align: center;
-    }
+  }
+  footer {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: yellow;
+    color: #000;
+    text-align: center;
+  }
 }
