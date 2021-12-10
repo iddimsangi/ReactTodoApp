@@ -4,7 +4,8 @@ function AddTodo() {
     return (
         <div className="Add_todo">
             <form action="" className="form">
-                <input type="radio"/>
+                {/* <input type="radio"/> */}
+                <div className="circle-btn"></div>
                 <input type="text"  name="text" placeholder="Create a new todo.." />
             </form>
         </div>

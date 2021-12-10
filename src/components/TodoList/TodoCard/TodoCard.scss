@@ -1,0 +1,29 @@
+@import '../../mixins';
+.todo_card{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    // background-color: hsl(235, 24%, 19%);
+    background-color: hsl(235, 24%, 19%);
+    padding: 1.4rem;
+    .container{
+        display: flex;
+        width: 80%;
+        align-items: center;
+        p{
+            font-size: 1.5rem;
+            color: hsl(234, 11%, 52%);
+        }
+        .circle{
+         @include circle; 
+            
+        }
+    }
+    .cross-icon{
+        height: 1.5rem;
+        cursor: pointer;
+    }
+   
+}

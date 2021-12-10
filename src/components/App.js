@@ -12,9 +12,8 @@ function App() {
             <img src={sun} alt="sun-logo" />
           </div>
           <div className="App-container--main-body">
-            {/* <h1>body</h1> */}
             <AddTodo />
-            {/* <TodoList /> */}
+            <TodoList />
           </div>
         </div>
       </div>
