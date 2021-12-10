@@ -1,6 +1,6 @@
 @import '../mixins';
 .Add_todo{
-    // margin-bottom: 2rem;
+    margin-bottom: 2rem;
     // border: 1px solid #fff;
    .form{
        padding: 1rem;
@@ -32,6 +32,7 @@
             background-color: transparent;
             border: none;
             font-size: 1.5rem;
+            color: hsl(236, 33%, 92%);
             
         }
        }
