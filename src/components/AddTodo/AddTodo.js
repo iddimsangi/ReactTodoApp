@@ -3,7 +3,10 @@ import "./AddTodo.scss"
 function AddTodo() {
     return (
         <div className="Add_todo">
-            <h1>ADD TODO COMPONENT</h1>
+            <form action="" className="form">
+                <input type="radio"/>
+                <input type="text"  name="text" placeholder="Create a new todo.." />
+            </form>
         </div>
     )
 }

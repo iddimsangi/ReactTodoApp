@@ -1,33 +1,36 @@
 .App {
   color: #fff;
-  background-color: brown;
+  background-color: hsl(235, 21%, 11%);
   position: relative;
 
   height: 100vh;
   &-container {
-    background-color: orange;
+    // background-color: orange;
+    background-image: url("../images/bg-desktop-dark.jpg");
+    background-position: center;
+    background-size: cover;
     height: 30vh;
     width: 100%;
     &--main {
       display: flex;
       flex-direction: column;
       position: absolute;
-      top: 10%;
-      left: 50%;
+      top: 8%;
+      left: 54%;
       transform: translateX(-50%);
       border: 2px solid blue;
-      background-color: yellow;
+      // background-color: yellow;
       min-height: 50vh;
       width: 50%;
       min-width: 25rem;
 
       &-head {
-        background-color: red;
+        // background-color: red;
         display: flex;
         justify-content: space-between;
         h1 {
           text-transform: uppercase;
-          font-size: 2.5rem;
+          font-size: 3rem;
         }
         img {
           width: 2.5rem;
@@ -38,6 +41,8 @@
         // margin-top: 2rem;
         // width: 90%;
         // margin: 0 auto;
+        //    padding-top: 10rem;
+        margin-top: 2rem;
         background-color: seagreen;
       }
     }
@@ -45,10 +50,14 @@
   footer {
     position: absolute;
     top: 90%;
-    left: 50%;
+    left: 54%;
     transform: translateX(-50%);
-    background-color: yellow;
+    // background-color: yellow;
+    font-size: 1.4rem;
     color: #000;
     text-align: center;
+    color: hsl(234, 11%, 52%);
+    // border: 1px solid red;
+    //  width: 100%;
   }
 }

@@ -14,7 +14,7 @@ function App() {
           <div className="App-container--main-body">
             {/* <h1>body</h1> */}
             <AddTodo />
-            <TodoList />
+            {/* <TodoList /> */}
           </div>
         </div>
       </div>
