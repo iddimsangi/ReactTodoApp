@@ -1,8 +1,7 @@
+.checkboxIn{
+  display: none;
+}
 .App {
-  .checkboxIn{
-    display: none;
-  }
-
   color: #fff;
   background-color: hsl(235, 21%, 11%);
   position: relative;
@@ -33,14 +32,18 @@
           text-transform: uppercase;
           font-size: 3rem;
         }
-        img {
-          &:last-of-type{
-            display: none;
+        .imgIcons{
+          .icon-moon{display: none;}
+          .icon-sun,
+          .icon-moon {
+            
+            width: 2.5rem;
+            height: 2.5rem;
+            cursor: pointer;
           }
-          width: 2.5rem;
-          height: 2.5rem;
-          cursor: pointer;
         }
+        
+        
       }
       &-body {
         margin-top: 2rem;
@@ -59,11 +62,19 @@
     color: hsl(234, 11%, 52%);
   }
 }
-// .checkboxIn:checked ~ .App{
-//   background-color: #fff;
-// }
-.checkboxIn:checked ~  .App-container{
+.checkboxIn:checked ~ .App .App-container{
   background-image: url("../images/bg-desktop-light.jpg");
+  .imgIcons{
+    .icon-moon{display: inline-block;}
+    .icon-sun{display: none;}
+    
+  }
+
 }
 
- 
+.checkboxIn:checked + .App{
+background-color: #fff;
+}
+
+
+

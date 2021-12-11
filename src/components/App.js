@@ -5,15 +5,16 @@ import AddTodo from "./AddTodo/AddTodo";
 import TodoList from "./TodoList/TodoList";
 function App() {
   return (
-    <div className="App">
-      <input type="checkbox" className="checkboxIn" id="logoToggle"/>
+<div>
+<input type="checkbox" className="checkboxIn" id="logoToggle"/>
+<div className="App">
       <div className="App-container">
         <div className="App-container--main">
           <div className="App-container--main-head">
             <h1>todo</h1>
         
-            <label htmlFor="logoToggle">
-            <img src={sun} alt="sun-logo" />
+            <label className="imgIcons" htmlFor="logoToggle">
+            <img src={sun} className="icon-sun" alt="sun-logo" />
             <img className="icon-moon" src={moon} alt="sun-logo" />
             </label>
            
@@ -28,6 +29,7 @@ function App() {
         <p>Drag and drop to reoder list</p>
       </footer>
     </div>
+</div>
   );
 }
 
