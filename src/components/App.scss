@@ -1,4 +1,8 @@
 .App {
+  .checkboxIn{
+    display: none;
+  }
+
   color: #fff;
   background-color: hsl(235, 21%, 11%);
   position: relative;
@@ -22,6 +26,7 @@
       min-width: 25rem;
 
       &-head {
+       
         display: flex;
         justify-content: space-between;
         h1 {
@@ -29,8 +34,12 @@
           font-size: 3rem;
         }
         img {
+          &:last-of-type{
+            display: none;
+          }
           width: 2.5rem;
           height: 2.5rem;
+          cursor: pointer;
         }
       }
       &-body {
@@ -50,3 +59,11 @@
     color: hsl(234, 11%, 52%);
   }
 }
+// .checkboxIn:checked ~ .App{
+//   background-color: #fff;
+// }
+.checkboxIn:checked ~  .App-container{
+  background-image: url("../images/bg-desktop-light.jpg");
+}
+
+ 
