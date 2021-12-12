@@ -38,4 +38,7 @@
        }
        
    }
+   .checkboxIn:checked ~ .form{
+       background-color: #fff;
+   }
 }

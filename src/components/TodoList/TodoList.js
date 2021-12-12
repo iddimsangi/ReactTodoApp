@@ -17,6 +17,14 @@ function TodoList() {
                 </div>
                 <a href="#">ClearCompleted</a>
             </div>
+            <div className="last-div">
+                <div>
+                <a href="#">All</a>
+                    <a href="#">Active</a>
+                    <a href="#">Completed</a>
+                </div>
+              
+            </div>
         </div>
     )
 }

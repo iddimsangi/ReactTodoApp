@@ -1,80 +1,85 @@
-.checkboxIn{
-  display: none;
-}
-.App {
-  color: #fff;
-  background-color: hsl(235, 21%, 11%);
-  position: relative;
-
-  height: 100vh;
-  &-container {
-    background-image: url("../images/bg-desktop-dark.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 30vh;
-    width: 100%;
-    &--main {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 8%;
-      left: 54%;
-      transform: translateX(-50%);
-      min-height: 50vh;
-      width: 50%;
-      min-width: 25rem;
-
-      &-head {
-       
+div{
+  // width: 94%;
+  // margin: 0 auto;
+  .checkboxIn{
+    display: none;
+  }
+  .App {
+    color: #fff;
+    background-color: hsl(235, 21%, 11%);
+    position: relative;
+  
+    height: 100vh;
+    &-container {
+      background-image: url("../images/bg-desktop-dark.jpg");
+      background-position: top;
+      background-size: cover;
+      height: 30vh;
+      width: 100%;
+      &--main {
         display: flex;
-        justify-content: space-between;
-        h1 {
-          text-transform: uppercase;
-          font-size: 3rem;
-        }
-        .imgIcons{
-          .icon-moon{display: none;}
-          .icon-sun,
-          .icon-moon {
-            
-            width: 2.5rem;
-            height: 2.5rem;
-            cursor: pointer;
+        flex-direction: column;
+        position: absolute;
+        top: 8%;
+        left: 52%;
+        transform: translateX(-50%);
+        min-height: 50vh;
+        width: 50%;
+        min-width: 25rem;
+  
+        &-head {
+         
+          display: flex;
+          justify-content: space-between;
+          h1 {
+            text-transform: uppercase;
+            font-size: 3rem;
           }
+          .imgIcons{
+            .icon-moon{display: none;}
+            .icon-sun,
+            .icon-moon {
+              
+              width: 2.5rem;
+              height: 2.5rem;
+              cursor: pointer;
+            }
+          }
+          
+          
         }
-        
-        
-      }
-      &-body {
-        margin-top: 2rem;
-        // background-color: seagreen;
+        &-body {
+          margin-top: 2rem;
+          // background-color: seagreen;
+        }
       }
     }
+    footer {
+      position: absolute;
+      top: 90%;
+      left: 54%;
+      transform: translateX(-50%);
+      font-size: 1.4rem;
+      color: #000;
+      text-align: center;
+      color: hsl(234, 11%, 52%);
+    }
   }
-  footer {
-    position: absolute;
-    top: 90%;
-    left: 54%;
-    transform: translateX(-50%);
-    font-size: 1.4rem;
-    color: #000;
-    text-align: center;
-    color: hsl(234, 11%, 52%);
+  .checkboxIn:checked ~ .App .App-container{
+    background-image: url("../images/bg-desktop-light.jpg");
+    .imgIcons{
+      .icon-moon{display: inline-block;}
+      .icon-sun{display: none;}
+      
+    }
+  
+  }
+  
+  .checkboxIn:checked + .App{
+  background-color: #fff;
   }
 }
-.checkboxIn:checked ~ .App .App-container{
-  background-image: url("../images/bg-desktop-light.jpg");
-  .imgIcons{
-    .icon-moon{display: inline-block;}
-    .icon-sun{display: none;}
-    
-  }
 
-}
-
-.checkboxIn:checked + .App{
-background-color: #fff;
-}
 
 
 

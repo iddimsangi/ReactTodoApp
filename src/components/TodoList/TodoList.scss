@@ -1,4 +1,5 @@
 .cardList {
+
   .list-footer {
     width: 100%;
     background-color: hsl(235, 24%, 19%);
@@ -19,6 +20,43 @@
       display: flex;
       justify-content: space-between;
       width: 50%;
+      // border: 2px solid red;
+    }
+  }
+  .last-div{
+    display: none;
+    div{
+      width: 100%;
+      background-color: hsl(235, 24%, 19%);
+      // display: none;
+      padding: 1.2rem;
+      display: flex;
+      justify-content: center;
+      border-top:.1rem solid hsl(234, 11%, 52%);
+      a {
+        text-decoration: none;
+        margin-left: 1rem;
+        font-size: 1.4rem;
+        // &:not(:last-of-type){
+        //   margin-left: 1.5rem;
+        // }
+        color: hsl(234, 11%, 52%);
+        transition: all 0.3s;
+        &:hover {
+          color: hsl(236, 33%, 92%);
+        }
+      }
+    }
+   
+  }
+  @media only screen and (max-width:744px){
+    .list-footer{
+      div{
+      display: none;
+      }
+    }
+    .last-div{
+     display:block;
     }
   }
 }
