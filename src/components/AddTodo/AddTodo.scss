@@ -15,9 +15,11 @@
         @include circle; 
        }
        input{
+           background-color: transparent;
            &:focus{
             border: none;
             outline: none;
+            background-color: transparent;
            }
         // &[type = "radio"]{
         //    width: 2rem;
@@ -38,7 +40,16 @@
        }
        
    }
-   .checkboxIn:checked ~ .form{
-       background-color: #fff;
-   }
+
+//    .checkboxIn:checked ~ .form{
+//        background-color: #fff;
+//    }
+}
+#logoToggle:checked + .Add_todo{
+    .form{
+        background-color:#fff;
+    }
+}
+#logoToggle:checked{
+    // display: block;
 }

@@ -1,9 +1,18 @@
+import { useState } from 'react'
 import sun from "../images/icon-sun.svg";
 import moon from "../images/icon-moon.svg"
 import "./App.scss";
 import AddTodo from "./AddTodo/AddTodo";
 import TodoList from "./TodoList/TodoList";
 function App() {
+  const[todos, setTodos] = useState([]);
+  const AddTodoHandler = (todo) =>{
+    setTodos([
+      {ID: new Date(), ...todo},
+      ...todos
+    ])
+  }
+  console.log(todos)
   return (
 <div>
 <input type="checkbox" className="checkboxIn" id="logoToggle"/>
@@ -20,7 +29,7 @@ function App() {
            
           </div>
           <div className="App-container--main-body">
-            <AddTodo />
+            <AddTodo AddTodoHandler={AddTodoHandler} />
             <TodoList />
           </div>
         </div>

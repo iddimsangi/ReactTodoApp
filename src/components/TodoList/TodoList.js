@@ -6,8 +6,8 @@ function TodoList() {
         <div className="cardList">
             {/* <h1>list</h1> */}
             <TodoCard/>
-            <TodoCard/>
-            <TodoCard/>
+            {/* <TodoCard/>
+            <TodoCard/> */}
             <div className="list-footer">
                 <a href="#">3itemlefts</a>
                 <div>
