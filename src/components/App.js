@@ -12,7 +12,14 @@ function App() {
       ...todos
     ])
   }
-  console.log(todos)
+  const deleteIdHandler = (Id) =>{
+    const deletedTodo = todos.filter(todo =>{
+      return todo.ID !== Id
+    })
+    console.log(deletedTodo)
+    setTodos([deletedTodo])
+  }
+  // console.log(todos)
   return (
 <div>
 <input type="checkbox" className="checkboxIn" id="logoToggle"/>
@@ -30,7 +37,7 @@ function App() {
           </div>
           <div className="App-container--main-body">
             <AddTodo AddTodoHandler={AddTodoHandler} />
-            <TodoList />
+            <TodoList todosArray={todos} deleteIdHandler = {deleteIdHandler} />
           </div>
         </div>
       </div>
