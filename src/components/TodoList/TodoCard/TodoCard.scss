@@ -1,5 +1,6 @@
 @import '../../mixins';
 .todo_card{
+    .togglecircle{display: none;}
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -16,14 +17,42 @@
             font-size: 1.5rem;
             color: hsl(234, 11%, 52%);
         }
+       
         .circle{
          @include circle; 
+         img{
+             display: none;
+         }
+         &:hover,
+         &:visited{
+             border:1px solid red;     
+         }
             
+        }
+        .Active{
+            @include circle; 
+            background-color: red;
+            img{
+                display:inline-block;
+            }
+          
+              
         }
     }
     .cross-icon{
         height: 1.5rem;
         cursor: pointer;
     }
-   
+    .togglecircle:checked ~ .container{
+        p{
+            // background-color: orange;
+            text-decoration: line-through;
+        }
+        .circle{
+            background-color: red;
+            img{
+                display: inline-block;
+            }
+        }
+    }
 }
