@@ -15,7 +15,7 @@ function TodoCard(props) {
         <span onClick={toggleClass}  className={isClicked ?  "Active" : "circle" }>
           <img src={checkmark} alt="checkmark icon" />
         </span>
-        <p>{todoDetail}</p>
+        <p className={isClicked ? "lineText":""}>{todoDetail}</p>
       </div>
 
       <img
