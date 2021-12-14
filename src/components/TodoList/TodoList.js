@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./TodoList.scss";
 import TodoCard from "./TodoCard/TodoCard";
 function TodoList(props) {
-    const deleteId = (Id) =>{
-        props.deleteIdHandler(Id)
-    }
-  const todoList = props.todosArray.map((todosArrayObj) => {
-    return <TodoCard todosArrayObj={todosArrayObj} key={todosArrayObj.id} onClicked = {deleteId} />;
-  });
+  const myTodos = props.todos;
+  // const deleteId = (Id) =>{
+  //     props.deleteIdHandler(Id)
+  // }
+  // const updateTodoHandler = (id) =>{
+  //     props.updatedTodoHandler(id)
+  // }
+  const allTodos = () => {
+    console.log(myTodos);
+  };
+  useEffect(() => {
+    console.log("updated");
+  }, [props.todos]);
+  console.log(props.todos);
+  //   const todoList = props.todos.map((todosArrayObj) => {
+  //     return <TodoCard todosArrayObj={todosArrayObj} key={todosArrayObj.id} updateTodo={props.updatedTodoHandler}  onClicked = {props.deleteIdHandler} />;
+  //   });
   return (
     <div className="cardList">
-      {todoList}
+      {props.todos.map((todosArrayObj) => {
+        return (
+          <TodoCard
+            todosArrayObj={todosArrayObj}
+            key={todosArrayObj.id}
+            updateTodo={props.updatedTodoHandler}
+            onClicked={props.deleteIdHandler}
+          />
+        );
+      })}
       <div className="list-footer">
         <a href="#">3itemlefts</a>
         <div>
-          <a href="#">All</a>
+          <a onClick={allTodos} href="#">
+            All
+          </a>
           <a href="#">Active</a>
           <a href="#">Completed</a>
         </div>

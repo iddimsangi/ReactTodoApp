@@ -17,13 +17,26 @@ function App() {
     });
     setTodos(deletedTodo);
   };
-  useEffect(() =>{
-   const receivedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-   if(receivedTodos) setTodos(receivedTodos)
-      },[])
-  useEffect(() =>{
-localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-  },[todos])
+  const updateTodo = (updateID) => {
+    const Todoupdate = todos.find((currTodo) => currTodo.ID === updateID);
+    const todoIndex = todos.findIndex((currTodo) => currTodo.ID === updateID);
+    console.log(Todoupdate, todoIndex);
+    setTodos(() => {
+      let todosCopy = todos
+      todosCopy[todoIndex] = {
+        ...Todoupdate,
+        isActive: !Todoupdate.isActive
+      }
+      return todosCopy
+    })
+  };
+  useEffect(() => {
+    const receivedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (receivedTodos) setTodos(receivedTodos);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
   console.log(todos);
   return (
     <div>
@@ -41,12 +54,16 @@ localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
             </div>
             <div className="App-container--main-body">
               <AddTodo AddTodoHandler={AddTodoHandler} />
-              <TodoList todosArray={todos} deleteIdHandler={deleteIdHandler} />
+              <TodoList
+                todos={todos}
+                deleteIdHandler={deleteIdHandler}
+                updatedTodoHandler={updateTodo}
+              />
             </div>
           </div>
         </div>
         <footer>
-          <p>Drag and drop to reoder list</p>
+          <p>Drag and drop to reorder list</p>
         </footer>
       </div>
     </div>

@@ -17,9 +17,9 @@ function AddTodo(props) {
   return (
     <div className="Add_todo">
       {/* <input type="checkbox" className="checkboxIn" id="toggletodo"/> */}
-      <form action="" className="form" >
+      <form action="" className="form" onSubmit={addTodo} >
         {/* <input type="radio"/> */}
-        <div className="circle-btn" onClick={addTodo}></div>
+        <div className="circle-btn" ></div>
         <input
           type="text"
           name="todoInput"
