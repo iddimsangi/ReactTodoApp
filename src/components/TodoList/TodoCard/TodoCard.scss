@@ -13,11 +13,13 @@
         display: flex;
         width: 80%;
         align-items: center;
-        p{
+        .normal{
             font-size: 1.5rem;
             color: hsl(234, 11%, 52%);
         }
        .lineText{
+        font-size: 1.5rem;
+        color: hsl(234, 11%, 52%);
            text-decoration: line-through
        }
         .circle{

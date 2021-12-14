@@ -32,7 +32,7 @@ function TodoList(props) {
         );
       })}
       <div className="list-footer">
-        <a href="#">3itemlefts</a>
+        <a href="#">{props.todos.length} itemlefts</a>
         <div>
           <a onClick={allTodos} href="#">
             All
