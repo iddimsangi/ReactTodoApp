@@ -54,6 +54,12 @@ function App() {
       setkeyword("Completed")
       return;
     }
+    if(keyword === "Clear"){
+      setTodos(todos.filter(todo =>todo.isActive === true))
+      setfilteredTodo(todos.filter(todo => todo.isActive !== false))
+      setkeyword("Clear")
+      return;
+    }
   };
 
   useEffect(() => {
