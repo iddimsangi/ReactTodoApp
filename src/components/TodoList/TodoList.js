@@ -2,16 +2,16 @@ import React, { useEffect } from "react";
 import "./TodoList.scss";
 import TodoCard from "./TodoCard/TodoCard";
 function TodoList(props) {
-  const myTodos = props.todos;
+  // const myTodos = props.todos;
   // const deleteId = (Id) =>{
   //     props.deleteIdHandler(Id)
   // }
   // const updateTodoHandler = (id) =>{
   //     props.updatedTodoHandler(id)
   // }
-  const allTodos = () => {
-    console.log(myTodos);
-  };
+  // const allTodos = () => {
+  //   console.log(myTodos);
+  // };
   useEffect(() => {
     console.log("updated");
   }, [props.todos]);
@@ -34,19 +34,19 @@ function TodoList(props) {
       <div className="list-footer">
         <a href="#">{props.todos.length} itemlefts</a>
         <div>
-          <a onClick={allTodos} href="#">
+          <a onClick={() => props.filtered("All")} href="#">
             All
           </a>
-          <a href="#">Active</a>
-          <a href="#">Completed</a>
+          <a onClick={() => props.filtered("Active")}  href="#">Active</a>
+          <a onClick={() => props.filtered("Completed")} href="#">Completed</a>
         </div>
-        <a href="#">ClearCompleted</a>
+        <a onClick={() => props.filtered("Clear")} href="#">ClearCompleted</a>
       </div>
       <div className="last-div">
         <div>
-          <a href="#">All</a>
-          <a href="#">Active</a>
-          <a href="#">Completed</a>
+          <a onClick={() => props.filtered("All")} href="#">All</a>
+          <a onClick={() => props.filtered("Active")} href="#">Active</a>
+          <a onClick={() => props.filtered("Completed")} href="#">Completed</a>
         </div>
       </div>
     </div>

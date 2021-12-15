@@ -8,8 +8,13 @@ import TodoList from "./TodoList/TodoList";
 function App() {
   const LOCAL_STORAGE_KEY = "todos";
   const [todos, setTodos] = useState([]);
+  const [filteredTodo, setfilteredTodo] = useState([]);
+  const [keyword, setkeyword] = useState("All");
   const AddTodoHandler = (todo) => {
     setTodos([{ ID: uniqid(), ...todo }, ...todos]);
+    setkeyword("All");
+    // setfilteredTodo([...todo])
+    // console.log("FILTERED TODO: "+ filteredTodo)
   };
   const deleteIdHandler = (Id) => {
     const deletedTodo = todos.filter((todo) => {
@@ -22,14 +27,35 @@ function App() {
     const todoIndex = todos.findIndex((currTodo) => currTodo.ID === updateID);
     console.log(Todoupdate, todoIndex);
     setTodos(() => {
-      let todosCopy = todos
+      let todosCopy = todos;
       todosCopy[todoIndex] = {
         ...Todoupdate,
-        isActive: !Todoupdate.isActive
-      }
-      return todosCopy
-    })
+        isActive: !Todoupdate.isActive,
+      };
+      return [...todosCopy];
+    });
   };
+  useEffect(() => {
+    filtered(keyword);
+  }, [todos, keyword]);
+  const filtered = (keyword) => {
+    if (keyword === "All") {
+      setfilteredTodo(todos);
+      setkeyword("All")
+      return;
+    }
+    if (keyword === "Active") {
+      setfilteredTodo(todos.filter((todo) => todo.isActive === true));
+      setkeyword("Active")
+      return;
+    }
+    if(keyword === "Completed"){
+      setfilteredTodo(todos.filter(todo => todo.isActive === false))
+      setkeyword("Completed")
+      return;
+    }
+  };
+
   useEffect(() => {
     const receivedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (receivedTodos) setTodos(receivedTodos);
@@ -55,9 +81,10 @@ function App() {
             <div className="App-container--main-body">
               <AddTodo AddTodoHandler={AddTodoHandler} />
               <TodoList
-                todos={todos}
+                todos={filteredTodo}
                 deleteIdHandler={deleteIdHandler}
                 updatedTodoHandler={updateTodo}
+                filtered={filtered}
               />
             </div>
           </div>
