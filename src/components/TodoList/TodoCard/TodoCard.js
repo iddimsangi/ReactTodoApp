@@ -5,15 +5,13 @@ import "./TodoCard.scss";
 function TodoCard(props) {
   const { ID, todoDetail, isActive } = props.todosArrayObj;
 
-  console.log(isActive);
-
   const [isClicked, setisClicked] = useState(false);
   const toggleClass = (ID) => {
     setisClicked(!isClicked);
     props.updateTodo(ID)
   };
   return (
-    <div className="todo_card">
+    <div className={props.theme ? "todo_card" : "todo_card_theme"}>
       {/* <input type="checkbox" className="togglecircle" id="togglecircle" /> */}
       <div className="container">
         <span

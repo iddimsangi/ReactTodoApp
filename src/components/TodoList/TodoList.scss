@@ -39,20 +39,102 @@
       margin-top: 2rem;
       border-radius: .5rem;
       a {
-        text-decoration: none;
-        margin-left: 1rem;
-        font-size: 1.4rem;
-        // &:not(:last-of-type){
-        //   margin-left: 1.5rem;
-        // }
-        // &:active,
-        // &:visited{
-        //   color: #8B00D8;
-        // }
-        color: hsl(234, 11%, 52%);
-        transition: all 0.3s;
-        &:hover,
-        &:active {
+        &:link,
+        &:visited{
+          text-decoration: none;
+          margin-left: 1rem;
+          font-size: 1.4rem;
+          // &:not(:last-of-type){
+          //   margin-left: 1.5rem;
+          // }
+          // &:active,
+          // &:visited{
+          //   color: #8B00D8;
+          // }
+          color: hsl(234, 11%, 52%);
+          transition: all 0.3s;
+        }
+
+        &:hover{
+          color: hsl(236, 33%, 92%);
+        }
+      }
+    }
+   
+  }
+  @media only screen and (max-width:744px){
+    .list-footer{
+      div{
+      display: none;
+      }
+    }
+    .last-div{
+     display:block;
+    }
+  }
+}
+
+
+.cardListDark {
+
+  .list-footer {
+    width: 100%;
+    background-color: #fff;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: hsl(234, 11%, 52%);
+      transition: all 0.3s;
+      &:hover {
+        color: hsl(236, 33%, 92%);
+      }
+    }
+    div {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      // border: 2px solid red;
+    }
+  }
+  .last-div{
+    display: none;
+    div{
+      width: 100%;
+      background-color: #fff;
+
+      // display: none;
+      
+      padding: 1.2rem;
+      display: flex;
+      justify-content: center;
+      // border-top:.1rem solid hsl(234, 11%, 52%);
+      margin-top: 2rem;
+      border-radius: .5rem;
+      a {
+        &:link,
+        &:visited{
+          text-decoration: none;
+          margin-left: 1rem;
+          font-size: 1.4rem;
+          // &:not(:last-of-type){
+          //   margin-left: 1.5rem;
+          // }
+          // &:active,
+          // &:visited{
+          //   color: #8B00D8;
+          // }
+          color: hsl(234, 11%, 52%);
+          transition: all 0.3s;
+        }
+
+        &:hover{
           color: hsl(236, 33%, 92%);
         }
       }

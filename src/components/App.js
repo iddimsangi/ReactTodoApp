@@ -10,12 +10,14 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [filteredTodo, setfilteredTodo] = useState([]);
   const [keyword, setkeyword] = useState("All");
+  const[theme, settheme] = useState(true);
   const AddTodoHandler = (todo) => {
     setTodos([{ ID: uniqid(), ...todo }, ...todos]);
     setkeyword("All");
     // setfilteredTodo([...todo])
     // console.log("FILTERED TODO: "+ filteredTodo)
   };
+  // let isBlackCopy = theme.isBlack
   const deleteIdHandler = (Id) => {
     const deletedTodo = todos.filter((todo) => {
       return todo.ID !== Id;
@@ -25,7 +27,6 @@ function App() {
   const updateTodo = (updateID) => {
     const Todoupdate = todos.find((currTodo) => currTodo.ID === updateID);
     const todoIndex = todos.findIndex((currTodo) => currTodo.ID === updateID);
-    console.log(Todoupdate, todoIndex);
     setTodos(() => {
       let todosCopy = todos;
       todosCopy[todoIndex] = {
@@ -35,6 +36,9 @@ function App() {
       return [...todosCopy];
     });
   };
+  // const themeChanger = (false) =>{
+    
+  // }
   useEffect(() => {
     filtered(keyword);
   }, [todos, keyword]);
@@ -57,7 +61,7 @@ function App() {
     if(keyword === "Clear"){
       setTodos(todos.filter(todo =>todo.isActive === true))
       setfilteredTodo(todos.filter(todo => todo.isActive !== false))
-      setkeyword("Clear")
+      setkeyword("All")
       return;
     }
   };
@@ -68,8 +72,9 @@ function App() {
   }, []);
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+    console.log("here");
   }, [todos]);
-  console.log(todos);
+  // console.log(todos);
   return (
     <div>
       <input type="checkbox" className="checkboxIn" id="logoToggle" />
@@ -79,18 +84,19 @@ function App() {
             <div className="App-container--main-head">
               <h1>todo</h1>
 
-              <label className="imgIcons" htmlFor="logoToggle">
+              <label onClick = {() => settheme(!theme)} className="imgIcons"  htmlFor="logoToggle">
                 <img src={sun} className="icon-sun" alt="sun-logo" />
                 <img className="icon-moon" src={moon} alt="sun-logo" />
               </label>
             </div>
             <div className="App-container--main-body">
-              <AddTodo AddTodoHandler={AddTodoHandler} />
+              <AddTodo AddTodoHandler={AddTodoHandler} theme ={theme} />
               <TodoList
                 todos={filteredTodo}
                 deleteIdHandler={deleteIdHandler}
                 updatedTodoHandler={updateTodo}
                 filtered={filtered}
+                theme={theme}
               />
             </div>
           </div>

@@ -64,3 +64,69 @@
         }
     }
 }
+
+.todo_card_theme{
+    .togglecircle{display: none;}
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1.4rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-bottom: .1rem solid hsl(234, 11%, 52%);
+    &:first-child{
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+    .container{
+        display: flex;
+        width: 80%;
+        align-items: center;
+        .normal{
+            font-size: 1.5rem;
+            color: hsl(234, 11%, 52%);
+        }
+       .lineText{
+        font-size: 1.5rem;
+        color: hsl(234, 11%, 52%);
+           text-decoration: line-through
+       }
+        .circle{
+         @include circle; 
+         img{
+             display: none;
+         }
+         &:hover,
+         &:visited{
+             border:1px solid #B345FB;     
+         }
+            
+        }
+        .Active{
+            @include circle; 
+            background-color: #8B00D8;
+            img{
+                display:inline-block;
+            }
+          
+              
+        }
+    }
+    .cross-icon{
+        height: 1.5rem;
+        cursor: pointer;
+    }
+    .togglecircle:checked ~ .container{
+        p{
+            // background-color: orange;
+            text-decoration: line-through;
+        }
+        .circle{
+            background-color: #8B00D8;
+            img{
+                display: inline-block;
+            }
+        }
+    }
+}
