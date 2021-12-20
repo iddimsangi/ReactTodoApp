@@ -36,7 +36,7 @@ My challenges on this task were, Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![https://github.com/iddimsangi/ReactTodoApp/blob/master/src/Screenshot%20from%202021-12-20%2011-50-07.png](https://github.com/iddimsangi/ReactTodoApp/blob/master/src/Screenshot%20from%202021-12-20%2011-50-07.png)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
