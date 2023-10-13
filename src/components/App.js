@@ -10,14 +10,11 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [filteredTodo, setfilteredTodo] = useState([]);
   const [keyword, setkeyword] = useState("All");
-  const[theme, settheme] = useState(true);
+  const [theme, settheme] = useState(true);
   const AddTodoHandler = (todo) => {
     setTodos([{ ID: uniqid(), ...todo }, ...todos]);
     setkeyword("All");
-    // setfilteredTodo([...todo])
-    // console.log("FILTERED TODO: "+ filteredTodo)
   };
-  // let isBlackCopy = theme.isBlack
   const deleteIdHandler = (Id) => {
     const deletedTodo = todos.filter((todo) => {
       return todo.ID !== Id;
@@ -36,32 +33,29 @@ function App() {
       return [...todosCopy];
     });
   };
-  // const themeChanger = (false) =>{
-    
-  // }
   useEffect(() => {
     filtered(keyword);
   }, [todos, keyword]);
   const filtered = (keyword) => {
     if (keyword === "All") {
       setfilteredTodo(todos);
-      setkeyword("All")
+      setkeyword("All");
       return;
     }
     if (keyword === "Active") {
       setfilteredTodo(todos.filter((todo) => todo.isActive === true));
-      setkeyword("Active")
+      setkeyword("Active");
       return;
     }
-    if(keyword === "Completed"){
-      setfilteredTodo(todos.filter(todo => todo.isActive === false))
-      setkeyword("Completed")
+    if (keyword === "Completed") {
+      setfilteredTodo(todos.filter((todo) => todo.isActive === false));
+      setkeyword("Completed");
       return;
     }
-    if(keyword === "Clear"){
-      setTodos(todos.filter(todo =>todo.isActive === true))
-      setfilteredTodo(todos.filter(todo => todo.isActive !== false))
-      setkeyword("All")
+    if (keyword === "Clear") {
+      setTodos(todos.filter((todo) => todo.isActive === true));
+      setfilteredTodo(todos.filter((todo) => todo.isActive !== false));
+      setkeyword("All");
       return;
     }
   };
@@ -74,7 +68,6 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
     console.log("here");
   }, [todos]);
-  // console.log(todos);
   return (
     <div>
       <input type="checkbox" className="checkboxIn" id="logoToggle" />
@@ -84,13 +77,17 @@ function App() {
             <div className="App-container--main-head">
               <h1>todo</h1>
 
-              <label onClick = {() => settheme(!theme)} className="imgIcons"  htmlFor="logoToggle">
+              <label
+                onClick={() => settheme(!theme)}
+                className="imgIcons"
+                htmlFor="logoToggle"
+              >
                 <img src={sun} className="icon-sun" alt="sun-logo" />
                 <img className="icon-moon" src={moon} alt="sun-logo" />
               </label>
             </div>
             <div className="App-container--main-body">
-              <AddTodo AddTodoHandler={AddTodoHandler} theme ={theme} />
+              <AddTodo AddTodoHandler={AddTodoHandler} theme={theme} />
               <TodoList
                 todos={filteredTodo}
                 deleteIdHandler={deleteIdHandler}
